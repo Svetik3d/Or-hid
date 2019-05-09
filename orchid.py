@@ -38,8 +38,8 @@ def main():
         time_on, time_off = files.read().split("\n")
         time_on_h, time_on_m = time_on.split(":")
         time_off_h, time_off_m = time_off.split(":")
-        time_on = now.replace(hour=time_on_h, minute=time_on_m, second=0, microsecond=0)
-        time_off = now.replace(hour=time_off_h, minute=time_off_m, second=0, microsecond=0)
+        time_on = now.replace(hour=int(time_on_h), minute=int(time_on_m), second=0, microsecond=0)
+        time_off = now.replace(hour=int(time_off_h), minute=int(time_off_m), second=0, microsecond=0)
     if time_off >= now >= time_on:
         ser.write("1")
     else: 
