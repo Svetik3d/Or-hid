@@ -35,7 +35,7 @@ def main():
     whi = True
     now = datetime.datetime.now()
     with open(PATH, "r") as files:
-        time_on, time_off = files.read().split("\n")
+        time_on, time_off = files.read().strip().split("\n")
         time_on_h, time_on_m = time_on.split(":")
         time_off_h, time_off_m = time_off.split(":")
         time_on = now.replace(hour=int(time_on_h), minute=int(time_on_m), second=0, microsecond=0)
